@@ -1,0 +1,328 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;800&family=Noto+Sans+JP&family=Noto+Sans:wght@400;600&display=swap');
+@media print {
+    .printButton {
+        display: none;
+        }
+    @page {
+        size: A4;
+        /* margin: 10mm; */
+
+        /* ヘッダーの非表示 */
+        &header {
+            display: none;
+        }
+        &footer {
+            display: none;
+        }
+    }
+}
+article {
+    position: relative;
+}
+.print_pages::before {
+    background-image: url(images/logo.png);
+}
+.print_pages{
+    /*A4縦*/
+        width: 185mm;
+        height: 270mm;
+        page-break-after: always;
+        position: relative;
+        counter-increment: page_count;
+        /* background-color: aqua; */
+        font-size: 9px;
+    }
+      /*最後のページは改ページを入れない*/
+    .print_pages:last-child{
+        page-break-after: auto;
+    }
+    .print_pages:after{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        content: counter(page_count) "ページ";
+    }
+    .invoice_table {
+        width: 100%;
+        border-collapse: collapse;
+        /* margin-top: 50px; */
+        /* border: solid 2px #333; */
+    }
+    .invoice_table td {
+        /* border: dashed 1px #777; */
+        /* text-align: center; セル内のテキストを中央揃え */
+        white-space: nowrap; /* テキストの折り返しを禁止 */
+        overflow: hidden; /* セル内のテキストを隠す */
+        text-overflow: ellipsis; /* 隠れたテキストに省略符号を表示 */
+        width: 18.5mm;
+    }
+    
+    .invoice_table tr:first-child {
+        height: 5mm;
+    }
+    .invoice_table tr {
+        height: 5mm;
+    }
+    /*ロゴ*/
+    .print_article {
+        position: relative;
+    }
+    .print_article::before {
+        content: "";
+        display: block;
+        width: 90px; /* 画像の幅 */
+        height: 90px; /* 画像の高さ */
+        background-image: url(../images/logo.png); /* ロゴ画像のパス */
+        position: absolute;
+        background-size: cover; /* 画像を要素に合わせて調整 */
+        z-index: 10;
+        left: 600px;
+        top: 45px;
+        /* その他のスタイルプロパティを設定 */
+    }
+    /*会社印*/
+    .print_article::after {
+        content: "";
+        display: block;
+        width: 75px; /* 画像の幅 */
+        height: 75px; /* 画像の高さ */
+        background-image: url(../images/hanko.png); /* ロゴ画像のパス */
+        position: absolute;
+        background-size: cover; /* 画像を要素に合わせて調整 */
+        z-index: 10;
+        left: 607px;
+        top: 270px;
+        /* その他のスタイルプロパティを設定 */
+    }
+    /*テキスト文字揃え*/
+    .invoice_table tr:nth-child(1) td:nth-child(8),
+    .invoice_table tr:nth-child(1) td:nth-child(9),
+    .invoice_table tr:nth-child(2) td:nth-child(9),
+    .invoice_table tr:nth-child(8) td:nth-child(9),
+    .invoice_table tr:nth-child(9) td:nth-child(7),
+    .invoice_table tr:nth-child(9) td:nth-child(9),
+    .invoice_table tr:nth-child(10) td:nth-child(9),
+    .invoice_table tr:nth-child(11) td:nth-child(9),
+    .invoice_table tr:nth-child(12) td:nth-child(2),
+    .invoice_table tr:nth-child(12) td:nth-child(9),
+    .invoice_table tr:nth-child(11) td:nth-child(10),
+    .invoice_table tr:nth-child(12) td:nth-child(10),
+    .invoice_table tr:nth-child(13) td:nth-child(9),
+    .invoice_table tr:nth-child(13) td:nth-child(10),
+    .invoice_table tr:nth-child(14) td:nth-child(2),
+    .invoice_table tr:nth-child(40) td:nth-child(1),
+    .invoice_table tr:nth-child(41) td:nth-child(1),
+    .invoice_table tr:nth-child(42) td:nth-child(1),
+    .invoice_table tr:nth-child(43) td:nth-child(1),
+    .invoice_table tr:nth-child(21) td:nth-child(5),
+    .invoice_table tr:nth-child(22) td:nth-child(5),
+    .invoice_table tr:nth-child(23) td:nth-child(5),
+    .invoice_table tr:nth-child(24) td:nth-child(5),
+    .invoice_table tr:nth-child(25) td:nth-child(5),
+    .invoice_table tr:nth-child(26) td:nth-child(5),
+    .invoice_table tr:nth-child(27) td:nth-child(5),
+    .invoice_table tr:nth-child(28) td:nth-child(5),
+    .invoice_table tr:nth-child(21) td:nth-child(7),
+    .invoice_table tr:nth-child(22) td:nth-child(7),
+    .invoice_table tr:nth-child(23) td:nth-child(7),
+    .invoice_table tr:nth-child(24) td:nth-child(7),
+    .invoice_table tr:nth-child(25) td:nth-child(7),
+    .invoice_table tr:nth-child(26) td:nth-child(7),
+    .invoice_table tr:nth-child(27) td:nth-child(7),
+    .invoice_table tr:nth-child(28) td:nth-child(7),
+    .invoice_table tr:nth-child(29) td:nth-child(7),
+    .invoice_table tr:nth-child(31) td:nth-child(5),
+    .invoice_table tr:nth-child(32) td:nth-child(5),
+    .invoice_table tr:nth-child(33) td:nth-child(5),
+    .invoice_table tr:nth-child(34) td:nth-child(5),
+    .invoice_table tr:nth-child(35) td:nth-child(5),
+    .invoice_table tr:nth-child(36) td:nth-child(5),
+    .invoice_table tr:nth-child(37) td:nth-child(5),
+    .invoice_table tr:nth-child(38) td:nth-child(5),
+    .invoice_table tr:nth-child(31) td:nth-child(7),
+    .invoice_table tr:nth-child(32) td:nth-child(7),
+    .invoice_table tr:nth-child(33) td:nth-child(7),
+    .invoice_table tr:nth-child(34) td:nth-child(7),
+    .invoice_table tr:nth-child(35) td:nth-child(7),
+    .invoice_table tr:nth-child(36) td:nth-child(7),
+    .invoice_table tr:nth-child(37) td:nth-child(7),
+    .invoice_table tr:nth-child(38) td:nth-child(7),
+    .invoice_table tr:nth-child(39) td:nth-child(7),
+    .invoice_table tr:nth-child(40) td:nth-child(2),
+    .invoice_table tr:nth-child(41) td:nth-child(2),
+    .invoice_table tr:nth-child(42) td:nth-child(2),
+    .invoice_table tr:nth-child(43) td:nth-child(2),
+    .invoice_table tr:nth-child(45) td:nth-child(4),
+    .invoice_table tr:nth-child(46) td:nth-child(4) {
+        text-align: right;
+    }
+    .invoice_table tr:nth-child(4) td:nth-child(1),
+    .invoice_table tr:nth-child(6) td:nth-child(1),
+    .invoice_table tr:nth-child(19) td,
+    .invoice_table tr:nth-child(21) td:nth-child(4),
+    .invoice_table tr:nth-child(22) td:nth-child(4),
+    .invoice_table tr:nth-child(23) td:nth-child(4),
+    .invoice_table tr:nth-child(24) td:nth-child(4),
+    .invoice_table tr:nth-child(25) td:nth-child(4),
+    .invoice_table tr:nth-child(26) td:nth-child(4),
+    .invoice_table tr:nth-child(27) td:nth-child(4),
+    .invoice_table tr:nth-child(28) td:nth-child(4),
+    .invoice_table tr:nth-child(21) td:nth-child(6),
+    .invoice_table tr:nth-child(22) td:nth-child(6),
+    .invoice_table tr:nth-child(23) td:nth-child(6),
+    .invoice_table tr:nth-child(24) td:nth-child(6),
+    .invoice_table tr:nth-child(25) td:nth-child(6),
+    .invoice_table tr:nth-child(26) td:nth-child(6),
+    .invoice_table tr:nth-child(27) td:nth-child(6),
+    .invoice_table tr:nth-child(28) td:nth-child(6),
+    .invoice_table tr:nth-child(31) td:nth-child(4),
+    .invoice_table tr:nth-child(32) td:nth-child(4),
+    .invoice_table tr:nth-child(33) td:nth-child(4),
+    .invoice_table tr:nth-child(34) td:nth-child(4),
+    .invoice_table tr:nth-child(35) td:nth-child(4),
+    .invoice_table tr:nth-child(36) td:nth-child(4),
+    .invoice_table tr:nth-child(37) td:nth-child(4),
+    .invoice_table tr:nth-child(38) td:nth-child(4),
+    .invoice_table tr:nth-child(31) td:nth-child(6),
+    .invoice_table tr:nth-child(32) td:nth-child(6),
+    .invoice_table tr:nth-child(33) td:nth-child(6),
+    .invoice_table tr:nth-child(34) td:nth-child(6),
+    .invoice_table tr:nth-child(35) td:nth-child(6),
+    .invoice_table tr:nth-child(36) td:nth-child(6),
+    .invoice_table tr:nth-child(37) td:nth-child(6),
+    .invoice_table tr:nth-child(38) td:nth-child(6) {
+        text-align: center;
+    }
+    /*枠線、ボーダー線*/
+    .invoice_table tr:nth-child(6) td:nth-child(1),
+    .invoice_table tr:nth-child(12) td:nth-child(1),
+    .invoice_table tr:nth-child(12) td:nth-child(2),
+    .invoice_table tr:nth-child(13) td:nth-child(1),
+    .invoice_table tr:nth-child(13) td:nth-child(2),
+    .invoice_table tr:nth-child(14) td:nth-child(1),
+    .invoice_table tr:nth-child(14) td:nth-child(2),
+    .invoice_table tr:nth-child(45) td:nth-child(2),
+    .invoice_table tr:nth-child(45) td:nth-child(3),
+    .invoice_table tr:nth-child(45) td:nth-child(4),
+    .invoice_table tr:nth-child(46) td:nth-child(2),
+    .invoice_table tr:nth-child(46) td:nth-child(3),
+    .invoice_table tr:nth-child(46) td:nth-child(4),
+    .invoice_table tr:nth-child(48) {
+        border-bottom: 1px solid #333;
+    }
+    .invoice_table tr:nth-child(19) td,
+    .invoice_table tr:nth-child(20) td,
+    .invoice_table tr:nth-child(21) td,
+    .invoice_table tr:nth-child(22) td,
+    .invoice_table tr:nth-child(23) td,
+    .invoice_table tr:nth-child(24) td,
+    .invoice_table tr:nth-child(25) td,
+    .invoice_table tr:nth-child(26) td,
+    .invoice_table tr:nth-child(27) td,
+    .invoice_table tr:nth-child(28) td,
+    .invoice_table tr:nth-child(30) td,
+    .invoice_table tr:nth-child(31) td,
+    .invoice_table tr:nth-child(32) td,
+    .invoice_table tr:nth-child(33) td,
+    .invoice_table tr:nth-child(34) td,
+    .invoice_table tr:nth-child(35) td,
+    .invoice_table tr:nth-child(36) td,
+    .invoice_table tr:nth-child(37) td,
+    .invoice_table tr:nth-child(38) td,
+    .invoice_table tr:nth-child(40) td,
+    .invoice_table tr:nth-child(41) td,
+    .invoice_table tr:nth-child(42) td,
+    .invoice_table tr:nth-child(43) td {
+        border: 1px solid #333;
+    }
+    .invoice_table tr:nth-child(18) td,
+    .invoice_table tr:nth-child(28) td,
+    .invoice_table tr:nth-child(38) td,
+    .invoice_table tr:nth-child(39) td,
+    .invoice_table tr:nth-child(43) td {
+        border-bottom: 2px solid #333;
+    }
+    .invoice_table tr:nth-child(19) td:nth-child(1),
+    .invoice_table tr:nth-child(20) td:nth-child(1),
+    .invoice_table tr:nth-child(21) td:nth-child(1),
+    .invoice_table tr:nth-child(22) td:nth-child(1),
+    .invoice_table tr:nth-child(23) td:nth-child(1),
+    .invoice_table tr:nth-child(24) td:nth-child(1),
+    .invoice_table tr:nth-child(25) td:nth-child(1),
+    .invoice_table tr:nth-child(26) td:nth-child(1),
+    .invoice_table tr:nth-child(27) td:nth-child(1),
+    .invoice_table tr:nth-child(28) td:nth-child(1),
+    .invoice_table tr:nth-child(30) td:nth-child(1),
+    .invoice_table tr:nth-child(31) td:nth-child(1),
+    .invoice_table tr:nth-child(32) td:nth-child(1),
+    .invoice_table tr:nth-child(33) td:nth-child(1),
+    .invoice_table tr:nth-child(34) td:nth-child(1),
+    .invoice_table tr:nth-child(35) td:nth-child(1),
+    .invoice_table tr:nth-child(36) td:nth-child(1),
+    .invoice_table tr:nth-child(37) td:nth-child(1),
+    .invoice_table tr:nth-child(38) td:nth-child(1),
+    .invoice_table tr:nth-child(40) td:nth-child(1),
+    .invoice_table tr:nth-child(41) td:nth-child(1),
+    .invoice_table tr:nth-child(42) td:nth-child(1),
+    .invoice_table tr:nth-child(43) td:nth-child(1) {
+        border-left: 2px solid #333;
+    }
+    .invoice_table tr:nth-child(19) td:nth-child(8),
+    .invoice_table tr:nth-child(20) td:nth-child(1),
+    .invoice_table tr:nth-child(21) td:nth-child(8),
+    .invoice_table tr:nth-child(22) td:nth-child(8),
+    .invoice_table tr:nth-child(23) td:nth-child(8),
+    .invoice_table tr:nth-child(24) td:nth-child(8),
+    .invoice_table tr:nth-child(25) td:nth-child(8),
+    .invoice_table tr:nth-child(26) td:nth-child(8),
+    .invoice_table tr:nth-child(27) td:nth-child(8),
+    .invoice_table tr:nth-child(28) td:nth-child(8),
+    .invoice_table tr:nth-child(30) td:nth-child(1),
+    .invoice_table tr:nth-child(31) td:nth-child(8),
+    .invoice_table tr:nth-child(32) td:nth-child(8),
+    .invoice_table tr:nth-child(33) td:nth-child(8),
+    .invoice_table tr:nth-child(34) td:nth-child(8),
+    .invoice_table tr:nth-child(35) td:nth-child(8),
+    .invoice_table tr:nth-child(36) td:nth-child(8),
+    .invoice_table tr:nth-child(37) td:nth-child(8),
+    .invoice_table tr:nth-child(38) td:nth-child(8),
+    .invoice_table tr:nth-child(40) td:nth-child(3),
+    .invoice_table tr:nth-child(41) td:nth-child(3),
+    .invoice_table tr:nth-child(42) td:nth-child(3),
+    .invoice_table tr:nth-child(43) td:nth-child(3) {
+        border-right: 2px solid #333;
+    }
+    /*塗りつぶし*/
+    .invoice_table tr:nth-child(20) td,
+    .invoice_table tr:nth-child(30) td {
+        background-color: #333;
+        color: #fff;
+    }
+    /*フォントサイズ*/
+    .invoice_table tr:nth-child(4) td {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .invoice_table tr:nth-child(12) td:nth-child(1),
+    .invoice_table tr:nth-child(12) td:nth-child(2) {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+
+    /*--------------------------------
+    プルダウンリスト
+    -----------------------------------*/
+    .pull_input {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    /* .contents_top2 {
+        display: flex;
+        flex-wrap: wrap;
+    } */
+    .pull_input_form {
+        background-color: aqua;
+        width: 20%;
+    }

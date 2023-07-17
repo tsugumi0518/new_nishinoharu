@@ -1,0 +1,483 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;800&family=Noto+Sans+JP&family=Noto+Sans:wght@400;600&display=swap');
+
+/*------------------
+共通設定
+-------------------*/
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-family: 'M PLUS 1p', sans-serif;
+    font-family: 'Noto Sans', sans-serif;F
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+#wrap {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/bg_image2.jpeg);
+    background-size: cover;
+    z-index: 1;
+}
+#bg_wrap {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+header {
+    height: 10%;
+}
+.logo_title a {
+    text-decoration: none;
+    color: #000;
+}
+.logo_title p {
+    margin: 0;
+    padding: 15px 0 0 20px;
+    font-size: 30px;
+}
+.main_title {
+    text-align: center;
+}
+.main_title h1 {
+    margin-bottom: 20px;
+}
+.main_title p {
+    margin-top: 30px;
+    font-size: 24px;
+}
+.main_wrap {
+    width: 100%;
+    height: 90%;
+    margin-top: 0;
+    position: relative;
+}
+.sub_title {
+    text-align: right;
+    margin-right: 50px;
+    
+}
+.sub_title h1 {
+    font-size: 28px;
+    position: absolute;
+    right: 20px;
+    top: -40px;
+    margin: 0;
+}
+/*ログイン時名前*/
+.left_area_logout p.login_name {
+    margin: 0;
+    font-size: 11px;
+    color: #fff;
+}
+
+
+/*------------------
+ログインフォーム
+-------------------*/
+.login_wrap {
+    margin-top: 50px;
+    position: relative;
+}
+.login_form_wrap {
+    background-color: #626262;
+    width: 500px;
+    height: 300px;
+    padding: 15px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 24px;
+}
+.login_form {
+    height: 33%;
+}
+.form-group {
+    height: 100%;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-group_sub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    color: #fff;
+}
+input[type="text"], input[type="password"]  {
+    width: 250px;
+    height: 30px;
+    
+}
+input[type="submit"].login_btn {
+    width: 150px;
+    height: 30px;
+    background-color: #ffffff;
+    font-size: 18px;
+    color: #626262;
+    border-radius: 5px;
+    border-color: transparent;
+
+}
+input[type="submit"].login_btn:hover {
+    cursor: pointer;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+
+/*------------------
+TOPページ/ボタン
+-------------------*/
+.transition_wrap {
+    margin: 0 auto;
+    position: relative;
+}
+/*カテゴリーボタン*/
+.category_button_div {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-bottom: auto;
+    
+}
+.category_button {
+    width: 280px;
+    height: 200px;
+    background-color: #626262;
+    color: #fff;
+    font-size: 28px;
+    border-radius: 10px;
+    border: none;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px gray;
+    transition: .3s;
+}
+.category_button.span{
+    display: inline-block;
+    width: 100%;
+    top:50%;
+    color: #fff;
+    z-index: 2;
+}
+.category_button:hover{
+    box-shadow: none;
+    background-color: #000;
+    color: #fff;
+}
+
+/*ログアウトボタン*/
+.logout_button_div {
+    position: absolute;
+    right: 50px;
+    bottom: -120px;
+}
+.logout_button {
+    display: inline-block;
+    width: 160px;
+    height: 60px;
+    color: #fff;
+    border: solid 1px #676767;
+    background: #626262;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px gray;
+    transition: .3s;
+}
+.logout_button.span{
+    display: inline-block;
+    width: 100%;
+    top:50%;
+    color: #fff;
+    z-index: 2;
+}
+.logout_button:hover{
+    box-shadow: none;
+    background-color: #000;
+    color: #fff;
+}
+
+
+/*------------------
+共通/ナビ、メインエリア
+-------------------*/
+.main_area {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    z-index: 2;
+
+}
+/*左エリア、カテゴリアコーディオン*/
+.left_area {
+    width: 20%;
+    height: 90vh;
+    background-color: #626262;
+    text-align: center;
+    box-shadow: 2px 2px 4px gray;
+    z-index: 3;
+    position: relative;
+}
+
+nav ul {
+    padding: 0;
+    margin-left: 30px;
+    text-align: left;
+}
+.left_area_logout {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 30px;
+}
+.menu {
+    max-width: 300px;
+}
+.menu label {
+    color: #fff;
+}
+.menu a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #000;
+}
+
+.menu_bar01, .menu_bar02, .menu_bar03, .menu_bar04 {
+    display: block;
+    margin: 0 0 4px 0;
+    padding : 15px;
+    line-height: 1;
+    color :#fff;
+    cursor :pointer;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+    background-color :#f4f4f4;
+    list-style: none;
+}
+
+.menu li {
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#menu_bar01:checked ~ #links01 li,
+#menu_bar02:checked ~ #links02 li,
+#menu_bar03:checked ~ #links03 li,
+#menu_bar04:checked ~ #links04 li {
+    height: 54px;
+    opacity: 1;
+}
+
+/*共通メイン右エリア*/
+.right_area {
+    width: 80%;
+    height: 90vh;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px gray;
+    z-index: 3;
+    font-size: 11px;
+}
+.right_area_title {
+    width: 100%;
+    height: 6%;
+}
+.right_area_title p {
+    margin-top: 15px;
+    color: #fff;
+}
+.right_area_title h2, .left_area p, nav ul {
+    font-size: 22px;
+}
+.right_area_title h2 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.right_area_contents {
+    width: 100%;
+    height: 70%;
+}
+.right_area_contents2 {
+    width: 100%;
+    height: 93%;
+    margin: 0;
+}
+.right_area_contents3 {
+    width: 100%;
+    height: 83%;
+    margin: 0;
+}
+/*右エリアを上下に分割*/
+.contents_top {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0;
+}
+.contents_bottom {
+    width: 100%;
+    height: 7%;
+}
+.contents_bottom2 {
+    width: 100%;
+    height: 15%;
+}
+/*------------------
+ユーザー登録
+-------------------*/
+.form-group2 {
+    height: 100%;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user_div {
+    background-color: #fff;
+    width: 55%;
+    margin: 0 auto;
+    padding: 20px;
+    border: solid 2px #626262;
+    border-radius: 3px;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+}
+.entry_div {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+.user_div input[type="number"] {
+    width: 70%;
+}
+.user_div input[type="password"] {
+    width: 70%;
+}
+.user_div input[type="date"] {
+    width: 70%;
+}
+.user_div input[type="text"] {
+    width: 70%;
+}
+.form-group2 label {
+    width: 30%;
+    text-align: right;
+}
+.user_entry_btn {
+    position: absolute;
+    top: 58vh;
+    left: 65vw;
+}
+
+/*------------------
+購入リスト入力エリア新バージョン
+-------------------*/
+.input_card {
+    width: 100%;
+    height: 100%;
+    font-size: 11px;
+}
+.input_card ul {
+    width: 100%;
+    height: 100%;
+}
+ul.input_list {
+    list-style: none;
+    display: flex;
+	flex-wrap: wrap;
+    width: 99%;
+    height: 100%;
+    margin: 10px 0 0 0;
+}
+ul.input_list li {
+    width: 25%;
+    height: 8%;
+    display: flex;
+    border: solid 1px #333;  
+    text-align: center;
+}
+ul.input_list li p {
+    margin: 0;
+    padding: 0;
+    width: 70%;
+}
+input[type="number"].number_box {
+    width: 45%;
+    align-items: center;
+    /* justify-content: center; */
+    
+}
+input[type="submit"].number_box {
+    width: 50px;
+}
+ul.input_list form {
+    width: 30%;
+}
+.add_btn {
+    width: 45%;
+    height: 25px;
+    font-size: 11px;
+}
+
+
+/*----------------------
+合計金額計算テーブル/最新
+------------------------*/
+ul.total_li {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-left: 20px;
+    flex-wrap: wrap;
+}
+ul.total_li li {
+    width: 16%;
+    height: 3em;
+    border: solid 1px #1f1f1f;
+    background-color: #626262;
+    color: #fff;
+    display: flex;
+}
+.total_p {
+    margin: 0;
+    font-weight: bold;
+}
+.total_price_div {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+input[type="submit"].delete_btn {
+    font-size: 11px;
+
+}
+#btn3 {
+    background-color: #1f1f1f;
+    color: #fff;
+    /* bottom: 20px; */
+    width: 90px;
+    border-radius: 10px;
+}
+#btn3:hover {
+    opacity: 0.5;
+}
+
